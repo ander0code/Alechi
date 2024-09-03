@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+    scrollbar-width: none;
+}
+
 #lyrics {
     position: fixed;
     top: 50%;
