@@ -1,10 +1,10 @@
 onload = () =>{
         document.body.classList.remove("container");
-    };
-    
-    document.addEventListener("DOMContentLoaded", function() {
+};
+
+document.addEventListener("DOMContentLoaded", function() {
         const lyrics = [
-            { id: "placeholder", start: 0, end: 14 },
+            { id: "placeholder", start: 0, end: 15 },
             { id: "line1", start: 15, end: 20 },
             { id: "line2", start: 21, end: 26 },
             { id: "line3", start: 27, end: 32 },
@@ -29,10 +29,10 @@ onload = () =>{
                 const lineElement = document.getElementById(lyric.id);
     
                 if (currentTime >= lyric.start && currentTime <= lyric.end) {
+                    lineElement.classList.add("show");
                     lineElement.classList.remove("hide");
-                    lineElement.classList.add("typing");
                 } else {
-                    lineElement.classList.remove("typing");
+                    lineElement.classList.remove("show");
                     lineElement.classList.add("hide");
                 }
             });
