@@ -22,38 +22,3 @@
     margin: 0 auto;
 }
 
-@keyframes fadeInOut {
-    0% {
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes typingEffect {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  
-  .typing {
-    overflow: hidden;
-    border-right: .15em solid white; /* Cursor del efecto de typing */
-    white-space: nowrap;
-    animation: typingEffect 4s steps(30, end) forwards, fadeInOut 6s ease-in-out forwards;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
