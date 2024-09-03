@@ -29,9 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 const lineElement = document.getElementById(lyric.id);
     
                 if (currentTime >= lyric.start && currentTime <= lyric.end) {
-                    lineElement.classList.add("show");
-                    lineElement.classList.remove("hide");
-                } else {
+                    if (!lineElement.classList.contains("show")) {
+                        lineElement.classList.remove("hide");
+                        void lineElement.offsetWidth; // Trigger reflow
+                        lineElement.classList.add("show");
+                    }
+                } else if (lineElement.classList.contains("show")) {
                     lineElement.classList.remove("show");
                     lineElement.classList.add("hide");
                 }
@@ -42,4 +45,3 @@ document.addEventListener("DOMContentLoaded", function() {
     
         setInterval(updateLyrics, 1000);
     });
-    

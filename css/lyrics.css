@@ -1,24 +1,57 @@
-#lyrics h2 {
-    display: none;
-}
-
-#lyrics h2.show {
-    display: block;
-}
-
-/* Configuración general */
 #lyrics {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 2rem; 
-    color: white; 
-    text-shadow: 2px 2px 4px rgba(32, 31, 31, 0.7);
-    padding: 10px; 
-    border-radius: 8px; 
-    max-width: 80%;
-    margin: 0 auto;
-}
-
+    width: 100%;
+    max-width: 90%;
+    z-index: 30;
+    height: 150px; /* Ajusta esto según el tamaño de tu fuente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #lyrics h2 {
+    font-size: 3rem; /* Aumentado el tamaño de la fuente */
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  #lyrics h2.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  #lyrics h2.hide {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  /* Efecto de aparición */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Efecto de desvanecimiento */
+  @keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.9); }
+  }
+  
+  /* Aplicar efectos a las líneas */
+  #lyrics h2.show {
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  #lyrics h2.hide {
+    animation: fadeOut 0.5s forwards;
+  }
