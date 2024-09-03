@@ -1,0 +1,59 @@
+#lyrics h2 {
+    display: none;
+}
+
+#lyrics h2.show {
+    display: block;
+}
+
+/* Configuración general */
+#lyrics {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2rem; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(32, 31, 31, 0.7);
+    padding: 10px; 
+    border-radius: 8px; 
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes typingEffect {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .typing {
+    overflow: hidden;
+    border-right: .15em solid white; /* Cursor del efecto de typing */
+    white-space: nowrap;
+    animation: typingEffect 4s steps(30, end) forwards, fadeInOut 6s ease-in-out forwards;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
